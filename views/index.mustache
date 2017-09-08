@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Car Collection</title>
+  </head>
+  <body>
+    <h1>Car Collection</h1>
+    <form action="/collection" method="post">
+      <input type="text" name="make" placeholder="Make"/>
+      <input type="text" name="model" placeholder="Model"/>
+      <input type="text" name="year" placeholder="Year"/>
+      <input type="text" name="image" placeholder="Image Link"/>
+      <input type="text" name="engine" placeholder="Engine Type"/>
+      <input type="submit" name="submit" value="Submit"/>
+    </form>
+    <div name="submitted">
+
+<br>
+{{#cars}}
+
+<img src='{{image}}'/>
+<h2>Make: {{make}}</h2>
+<p>Model: {{model}}</p>
+<p>Year: {{year}}</p>
+<p>Engine: {{engine}}</p>
+
+<form action="/delete" method="post">
+<button name="id" value="{{_id}}">Remove Car</button>
+</form>
+
+{{/cars}}
+
+
+
+    </div>
+  </body>
+</html>

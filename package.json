@@ -1,0 +1,14 @@
+{
+  "name": "Car-Collection",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongodb": "^2.2.31",
+    "mongoose": "4.10.8",
+    "mustache-express": "^1.2.5"
+  }
+}
