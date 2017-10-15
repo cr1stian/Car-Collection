@@ -9,7 +9,10 @@ const Cars = require('./carSchema');
 app.engine('mustache', mustacheExpress());
 app.set('views','./views');
 app.set('view engine', 'mustache')
+app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
+
+app.set('port', (process.env.PORT || 5000));
 
 mongoose.Promise = require('bluebird');
 mongoose.connect('mongodb://localhost:27017/cars');
@@ -56,6 +59,6 @@ app.post('/delete', function(request, response){
 
 
 
-app.listen('mighty-lake-70884.herokuapp', function(){
-  console.log("I'm up and Running")
-})
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
